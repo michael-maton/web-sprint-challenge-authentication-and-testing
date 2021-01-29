@@ -1,4 +1,7 @@
 const router = require('express').Router();
+const jwt = require("jsonwebtoken");
+const { jwtSecret } = require("../../config/secrets.js");
+const User = require("../users/users-model");
 
 router.post('/register', (req, res) => {
   res.end('implement register, please!');
