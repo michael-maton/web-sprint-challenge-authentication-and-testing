@@ -7,13 +7,14 @@ module.exports = {
 };
 
 function get() {
-  return null;
+  return db("users");
 }
 
 function getBy(filter) {
-  return null;
+  return db("users").where(filter).orderBy("id");
 }
 
 async function add(details) {
-  return null;
+  const newUserID = await db("users").insert(details);
+  return db("users").where("id", newUserID).first();
 }
